@@ -1,0 +1,44 @@
+def main():
+    # Menginput nilai pertama
+    while True:
+        try:
+            nilai_pertama = float(input("Masukkan nilai pertama: "))
+            break
+        except ValueError:
+            print("Nilai yang dimasukkan bukan angka.")
+
+    # Menginput nilai kedua
+    while True:
+        try:
+            nilai_kedua = float(input("Masukkan nilai kedua: "))
+            break
+        except ValueError:
+            print("Nilai yang dimasukkan bukan angka.")
+
+    # Menginput operasi
+    while True:
+        operasi = input("Masukkan operasi (+, -, *, /): ")
+        if operasi in ["+", "-", "*", "/"]:
+            break
+        else:
+            print("Operasi yang dimasukkan tidak valid.")
+
+    # Melakukan operasi berdasarkan input
+    if operasi == "+":
+        hasil = nilai_pertama + nilai_kedua
+    elif operasi == "-":
+        hasil = nilai_pertama - nilai_kedua
+    elif operasi == "*":
+        hasil = nilai_pertama * nilai_kedua
+    elif operasi == "/":
+        if nilai_kedua == 0:
+            print("Pembagian dengan 0 tidak diizinkan.")
+            return
+        else:
+            hasil = nilai_pertama / nilai_kedua
+
+    # Menampilkan hasil
+    print("Hasil: ", hasil)
+
+if __name__ == "__main__":
+    main()
